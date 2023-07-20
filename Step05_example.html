@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example.html</title>
+    <style>
+        .main-nav{
+            background: orangered;
+            color: white;
+            /* 
+                root 요소(html) 의 글자 크기를 1rem 이라고 한다. 
+                글자 크기를 지정하지 않으면 글자 크기는 기본 16px로 설정되기 때문에
+                1rem 은 16px 이 된다. 
+            */
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .main-nav > ul{
+            /* ul 의 기본 스타일 제거 */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            /* ul 의 자식요소를 가로로 배치하기 위해 */
+            display: flex;
+            column-gap: 1rem;
+        }
+
+        /* .main-nav li{
+            margin-right: 1rem;
+        } */
+
+        .main-nav li a{
+            /* a 요소의 밑줄 제거 */
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-nav li a:hover{
+            text-decoration: underline;
+        }
+        /*
+            반응형 레이아웃
+            device 의 폭이 최대 575px일때 까지만 적용 할 css
+        */
+        @media(max-width: 575px){
+            .main-nav ul{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Logo</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Study</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

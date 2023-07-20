@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation.html</title>
+<style>
+    .round{
+        border: 1px solid red;
+        border-radius: 50%;
+    }
+    #pepe{
+        animation: rotateAni 3s linear;
+    }
+    #pepe1:hover{
+        /* animation: rotateAni 3s linear; */
+        animation-name: rotateAni;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+    }
+    .rotate{
+        animation: rotateAni 3s linear;
+    }
+    /*animation keyframe정의하기*/
+    @keyframes rotateAni{
+        from{
+            background-color: #ffffff;
+            transform: rotate(0deg);
+        }
+        to{
+            background-color: #ff00ff;
+            transform: rotate(360deg);
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h3>animation테스트</h3>
+        <img class="round" id="pepe" src="images/pepe.webp">
+        <img class="round" id="pepe1" src="images/pepe1.jpeg" >
+        <img class="round" id="pepe2" src="images/pepe2.jpeg" >
+        <img class="round" id="pepe3" src="images/pepe3.jpeg" >
+    </div>
+    <script>
+        //#pepe2는 click이벤트가 일어났을 때 rotateAni라는 키프레임이 적용되도록 해보세요.
+        document.querySelector("#pepe2").addEventListener("click",(e)=>{
+            e.target.style.animation="rotateAni 3s linear";
+        });
+        document.querySelector("#pepe3").addEventListener("click",(e)=>{
+            e.target.classList.add("rotate");
+        });
+        //animation이 종료되면 animationend라는 이벤트가 발생한다,
+        document.querySelector("#pepe3").addEventListener("animationend",(e)=>{
+            //rotate클래스를 제거하면 다음번에 다시 추가 될 때 animation이 적용 된다.
+            e.target.classList.remove("rotate");
+        });
+    </script>
+</body>
+</html>
