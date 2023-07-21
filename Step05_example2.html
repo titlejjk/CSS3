@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example2.html</title>
+    <style>
+        .container{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            row-gap: 20px;
+        }
+        .cards img{
+            width: 30%;
+            border: 3px solid black;
+
+        }
+        @media(max-width:575px){
+            .cards img{
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gallery 예제</h1>
+        <div class="cards">
+            <img src="images/pepe.png">
+            <img src="images/pepe1.png">
+            <img src="images/pepe2.png">
+            <img src="images/pepe3.png">
+            <img src="images/pepe4.png">
+            <img src="images/pepe5.png">
+            <img src="images/pepe6.png">
+            <img src="images/pepe7.png">
+            <img src="images/pepe8.png">
+        </div>
+    </div>
+</body>
+</html>
